@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+    <!--Head links to stylesheet and displays website title-->
+    <head>
+        <meta charset="utf-8">
+        <title>About Data - Clash Royale Game META-Analysis</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='master.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='about.css') }}">
+    </head>
+
+    <body>
+        <!--Header contains an image in the top left corner and the name of the website-->
+        <header>
+            <img src="{{ url_for('static', filename='Clash-Royale-Laughing-King.jpg') }}" alt="Clash Royale King">
+            <h1>Clash Royale Game META-Analysis</h1>
+        </header>
+
+        <!--nav element contains links to the homepage and About the Data page-->
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about" id='about'>About the Data</a>
+        </nav>
+
+        <!--about-data section provides information about the data that the website uses-->
+        <section id="about-data">
+            <h2>Contents:</h2>
+            <p>350,000 top ranked 1v1 Clash Royale Battles</p>
+            <p>Each row represents one battle and contains the cards in each player's deck, each player's trophy rating, and which player won the match.</p>
+            <h2>Source:</h2>
+            <p>Eric Xue, via <a href="https://www.kaggle.com/nonrice/clash-royale-battles-upper-ladder-december-2021">Kaggle</a></p>
+            <h2>Liscence:</h2>
+            <p>CC-BYSA-4.0; Data can be used for all purposes as long as proper credit is given.</p>
+            <h2>Timeframe:</h2>
+            <p>Data taken in December 2021 from players in the top ~600 Clash Royale clans.</p>
+            <h2>Modifications:</h2>
+            <p>Dataset cut down to 350,000 battles from the original 750,000.</p>
+        </section>
+    </body>
+</html>

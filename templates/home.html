@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+    <!--Head links to stylesheet and displays website title-->
+    <head>
+        <meta charset="utf-8">
+        <title>Home - Clash Royale Game META-Analysis</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='master.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+    </head>
+
+    <body>
+        <!--Header contains an image in the top left corner and the name of the website-->
+        <header>
+            <img src="{{ url_for('static', filename='Clash-Royale-Laughing-King.jpg') }}" alt="Clash Royale King">
+            <h1>Clash Royale Game META-Analysis</h1>
+        </header>
+
+        <!--nav element contains links to the homepage and About the Data page-->
+        <nav>
+            <a href="/" id='home'>Home</a>
+            <a href="/about">About the Data</a>
+        </nav>
+
+        <!--Sumamry section provides a one-sentence overview of the purpose of the website-->
+        <section id='summary'>
+            <h2>A Tool to Find Your Decks</h2>
+            <p>Clash Royale Game META-Analysis is an online tool to search for META Clash Royale deck statistics.</p>
+        </section>
+        <section id="main-content">
+
+            <!--Form element lets users specify the cards in the deck they're searching for, and which deck statistics they want to view-->
+            <form action="/results" method="POST">
+                <h2>Search For Deck Statistics</h2>
+                <p>* - required</p>
+                <div id="card-selection">
+                    <h3>Enter the Cards in the Deck</h3>
+                    <label for="card1">Card 1: *</label>
+                    <input type="text" required="required" name="card1" id="card1" list="card-list"><br>
+                    <label for="card2">Card 2: *</label>
+                    <input type="text" required="required" name="card2" id="card2" list="card-list"><br>
+                    <label for="card3">Card 3: *</label>
+                    <input type="text" required="required" name="card3" id="card3" list="card-list"><br>
+                    <label for="card4">Card 4: *</label>
+                    <input type="text" required="required" name="card4" id="card4" list="card-list"><br>
+                    <label for="card5">Card 5: *</label>
+                    <input type="text" required="required" name="card5" id="card5" list="card-list"><br>
+                    <label for="card6">Card 6: *</label>
+                    <input type="text" required="required" name="card6" id="card6" list="card-list"><br>
+                    <label for="card7">Card 7: *</label>
+                    <input type="text" required="required" name="card7" id="card7" list="card-list"><br>
+                    <label for="card8">Card 8: *</label>
+                    <input type="text" required="required" name="card8" id="card8" list="card-list"><br>
+
+                    <!--List of cards that the user can choose from when specifying which cards are in the deck they're searching for-->
+                    <datalist id="card-list">
+                        <option value="Archer Queen">Archer Queen</option>
+                        <option value="Archers">Archers</option>
+                        <option value="Arrows">Arrows</option>
+                        <option value="Baby Dragon">Baby Dragon</option>
+                        <option value="Balloon">Balloon</option>
+                        <option value="Bandit">Bandit</option>
+                        <option value="Barbarian Barrel">Barbarian Barrel</option>
+                        <option value="Barbarian Hut">Barbarian Hut</option>
+                        <option value="Barbarians">Barbarians</option>
+                        <option value="Bats">Bats</option>
+                        <option value="Battle Healer">Battle Healer</option>
+                        <option value="Battle Ram">Battle Ram</option>
+                        <option value="Bomb Tower">Bomb Tower</option>
+                        <option value="Bomber">Bomber</option>
+                        <option value="Bowler">Bowler</option>
+                        <option value="Cannon">Cannon</option>
+                        <option value="Cannon Cart">Cannon Cart</option>
+                        <option value="Clone">Clone</option>
+                        <option value="Dark Prince">Dark Prince</option>
+                        <option value="Dart Goblin">Dart Goblin</option>
+                        <option value="Earthquake">Earthquake</option>
+                        <option value="Electro Dragon">Electro Dragon</option>
+                        <option value="Electro Giant">Electro Giant</option>
+                        <option value="Electro Spirit">Electro Spirit</option>
+                        <option value="Electro Wizard">Electro Wizard</option>
+                        <option value="Elite Barbarians">Elite Barbarians</option>
+                        <option value="Elixir Collector">Elixir Collector</option>
+                        <option value="Elixir Golem">Elixir Golem</option>
+                        <option value="Executioner">Executioner</option>
+                        <option value="Fire Spirit">Fire Spirit</option>
+                        <option value="Fireball">Fireball</option>
+                        <option value="Firecracker">Firecracker</option>
+                        <option value="Fisherman">Fisherman</option>
+                        <option value="Flying Machine">Flying Machine</option>
+                        <option value="Freeze">Freeze</option>
+                        <option value="Furnace">Furnace</option>
+                        <option value="Giant">Giant</option>
+                        <option value="Giant Skeleton">Giant Skeleton</option>
+                        <option value="Giant Snowball">Giant Snowball</option>
+                        <option value="Goblin Barrel">Goblin Barrel</option>
+                        <option value="Goblin Cage">Goblin Cage</option>
+                        <option value="Goblin Drill">Goblin Drill</option>
+                        <option value="Goblin Gang">Goblin Gang</option>
+                        <option value="Goblin Giant">Goblin Giant</option>
+                        <option value="Goblin Hut">Goblin Hut</option>
+                        <option value="Goblins">Goblins</option>
+                        <option value="Golden Knight">Golden Knight</option>
+                        <option value="Golem">Golem</option>
+                        <option value="Graveyard">Graveyard</option>
+                        <option value="Guards">Guards</option>
+                        <option value="Heal Spirit">Heal Spirit</option>
+                        <option value="Hog Rider">Hog Rider</option>
+                        <option value="Hunter">Hunter</option>
+                        <option value="Ice Golem">Ice Golem</option>
+                        <option value="Ice Spirit">Ice Spirit</option>
+                        <option value="Ice Wizard">Ice Wizard</option>
+                        <option value="Inferno Dragon">Inferno Dragon</option>
+                        <option value="Inferno Tower">Inferno Tower</option>
+                        <option value="Knight">Knight</option>
+                        <option value="Lava Hound">Lava Hound</option>
+                        <option value="Lightning">Lightning</option>
+                        <option value="Lumberjack">Lumberjack</option>
+                        <option value="Magic Archer">Magic Archer</option>
+                        <option value="Mega Knight">Mega Knight</option>
+                        <option value="Mega Minion">Mega Minion</option>
+                        <option value="Miner">Miner</option>
+                        <option value="Mini P.E.K.K.A">Mini P.E.K.K.A</option>
+                        <option value="Minion Horde">Minion Horde</option>
+                        <option value="Minions">Minions</option>
+                        <option value="Mirror">Mirror</option>
+                        <option value="Mortar">Mortar</option>
+                        <option value="Mother Witch">Mother Witch</option>
+                        <option value="Musketeer">Musketeer</option>
+                        <option value="Night Witch">Night Witch</option>
+                        <option value="P.E.K.K.A">P.E.K.K.A</option>
+                        <option value="Poison">Poison</option>
+                        <option value="Prince">Prince</option>
+                        <option value="Princess">Princess</option>
+                        <option value="Rage">Rage</option>
+                        <option value="Ram Rider">Ram Rider</option>
+                        <option value="Rascals">Rascals</option>
+                        <option value="Rocket">Rocket</option>
+                        <option value="Royal Delivery">Royal Delivery</option>
+                        <option value="Royal Ghost">Royal Ghost</option>
+                        <option value="Royal Giant">Royal Giant</option>
+                        <option value="Royal Hogs">Royal Hogs</option>
+                        <option value="Royal Recruits">Royal Recruits</option>
+                        <option value="Skeleton Army">Skeleton Army</option>
+                        <option value="Skeleton Barrel">Skeleton Barrel</option>
+                        <option value="Skeleton Dragons">Skeleton Dragons</option>
+                        <option value="Skeleton King">Skeleton King</option>
+                        <option value="Skeletons">Skeletons</option>
+                        <option value="Sparky">Sparky</option>
+                        <option value="Spear Goblins">Spear Goblins</option>
+                        <option value="Tesla">Tesla</option>
+                        <option value="The Log">The Log</option>
+                        <option value="Three Musketeers">Three Musketeers</option>
+                        <option value="Tombstone">Tombstone</option>
+                        <option value="Tornado">Tornado</option>
+                        <option value="Valkyrie">Valkyrie</option>
+                        <option value="Wall Breakers">Wall Breakers</option>
+                        <option value="Witch">Witch</option>
+                        <option value="Wizard">Wizard</option>
+                        <option value="X-Bow">X-Bow</option>
+                        <option value="Zap">Zap</option>
+                        <option value="Zappies">Zappies</option>
+                    </datalist>
+                </div>
+                <div id="statistic-selection">
+                    <h3>Select Statistics to Display</h3>
+                    <input type="checkbox" name="winRate" id="win-rate" value="Win Rate">
+                    <label for="win-rate">Win Rate</label><br>
+                    <input type="checkbox" name="elixirCost" id="elixir-cost" value="Elixir Cost">
+                    <label for="elixir-cost">Elixir Cost</label><br>
+                    <input type="checkbox" name="trophyCount" id="user-trophy-count" value="Average Trophy Count">
+                    <label for="user-trophy-count">User Trophy Count</label><br>
+                    <input type="checkbox" name="numberOfWins" id="wins" value="Number of Wins">
+                    <label for="wins">Wins</label><br>
+                </div>
+                <input id='submit-button' type='submit' value='FIND DECK STATISTICS'>
+            </form>
+
+            <!--Instructions for how to search for deck statistics-->
+            <section id="instructions">
+                <h2>How to Search for Deck Statistics</h2>
+                <p>Use the form on the left to search for the statistics of a specific Clash Royale deck. Follow the steps below:</p>
+                <ol>
+                    <li>In each text box, enter the name of a Clash Royale card (capitalized) contained in the deck you wish to find the statistics for. Do not enter the same card in more than one text box.</li><br>
+                    <li>Select the deck statistics you wish to have displayed on the results page.</li><br>
+                    <li>Search for your deck's statistics!</li><br>
+                </ol>
+            </section>
+        </section>
+    </body>
+</html>

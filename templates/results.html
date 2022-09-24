@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+    <!--Head links to stylesheet and displays website title-->
+    <head>
+        <meta charset="utf-8">
+        <title>About Data - Clash Royale Game META-Analysis</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='master.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='results.css') }}">
+    </head>
+
+    <body>
+        <!--Header contains an image in the top left corner and the name of the website-->
+        <header>
+            <img src="{{ url_for('static', filename='Clash-Royale-Laughing-King.jpg') }}" alt="Clash Royale King">
+            <h1>Clash Royale Game META-Analysis</h1>
+        </header>
+
+        <!--nav element contains links to the homepage and About the Data page-->
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About the Data</a>
+        </nav>
+        <div id="main-content">
+            <section id="search-results">
+                <h2>Search Results</h2>
+                <h3>You searched for a deck containing the cards:</h3>
+                <ul>
+                    {% for card in deck %}
+                        <li>{{ card }}</li>
+                    {% endfor %}
+                </ul>
+                <h3>The statistics of the deck you searched for are:</h3>
+                <ul>
+                    {% for stat,value in statistics.items() %}
+                        <li>{{ stat }}: {{ value }}</li>
+                    {% endfor %}
+                </ul>
+                <a href="/">Search Again</a>
+            </section>
+            <section id="results-information">
+                <h2>Interpreting Your Results</h2>
+                <p>The results of your search are laid out as follows. The cards contained in the deck you searched for are displayed first, then the statistics of the deck that you chose to view are listed below that.</p>
+                <p>There are four statistics that may be listed below:</p>
+                <ul>
+                    <li>Elixir Cost: The average elixir cost of the cards in this deck.</li>
+                    <li>Win Rate: The win rate of this deck, as a percentage.</li>
+                    <li>Average User Trophy Count: The average trophy count of the users that use this deck.</li>
+                    <li>Number of Wins: The number of matches in which the player using this deck won.</li>
+                </ul>
+            </section>
+        </div>
+    </body>
+</html>

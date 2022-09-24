@@ -1,0 +1,41 @@
+/* Adjusts text color for all links */
+a {
+    color: white;
+}
+
+/*Increases the text size of h2 elements*/
+h2 {
+    font-size: 2em;
+}
+
+/*Increases the size of paragraph elements*/
+p {
+    font-size: 1.5em;
+}
+
+/*Changes the background color for the current page's link in the nav bar to show the user which page they are on*/
+#about {
+    color: darkblue;
+    background-color: cornsilk;
+    padding: 0 0.5%;
+}
+
+/*Increases left and right margins and padding for the page's about-data content, adds a border, and adjusts the background color*/
+#about-data {
+    background-color: #1c16d2;
+    padding: 0 2.5%;
+    margin: 0 2.5%;
+    border: 4px solid gold;
+}
+
+/*Adjusts the margins and increases the size of links in the nav bar*/
+nav a {
+    margin: 0 2.5%;
+    font-size: 2em;
+}
+
+/* Changes the text and background colors of the element currently in focus, or of a link being hovered over */
+a:focus, a:hover {
+    background-color: gold;
+    color: darkblue;
+}

@@ -1,0 +1,47 @@
+/* Increases the text size of h3 elements */
+h3 {
+    font-size: 1.5em;
+}
+
+/*Increases the size of text and bottom margins for paragraphs and list elements*/
+p, li {
+    font-size: 1.5em;
+    margin-bottom: 5%;
+}
+
+/* Organizes the search results and the information about the results into two columns */
+#main-content {
+    display: flex;
+    flex-direction: row;
+    margin: 0 5%;
+}
+
+/* Adjusts the size, spacing and text align of the headings in the search results and results information sections */
+#main-content h2 {
+    text-align: left;
+    font-size: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* Sets the background color, width, margins, padding, and border of the search results and result information sections */
+#search-results, #results-information {
+    background-color: #1c16d2;
+    width: 45%;
+    margin: 0 2.5%;
+    padding: 0 2.5%;
+    border: 4px solid gold;
+}
+
+/*Adjusts the text color, margins, text size of links in the nav bar*/
+a {
+    color: white;
+    margin: 0 2.5%;
+    font-size: 2em;
+}
+
+/* Changes the text and background colors of the element currently in focus, or of a link being hovered over */
+a:focus, a:hover {
+    background-color: gold;
+    color: darkblue;
+}

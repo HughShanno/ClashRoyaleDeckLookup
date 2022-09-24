@@ -1,0 +1,90 @@
+/* Adds a small margin between links in the nav bar */
+nav a {
+    margin: 2.5%;
+}
+
+/* Organizes the search input and the instructions for how to search into two columns */
+#main-content {
+    display: flex;
+    flex-direction: row;
+    margin: 0 5%;
+}
+
+/* Adjusts the spacing and text align of the headings in the form and instruction sections */
+#main-content h2 {
+    text-align: left;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* Sets the background color, width, margins, padding, and border of the form and instruction sections */
+form, #instructions {
+    background-color: #1c16d2;
+    width: 45%;
+    margin: 0 2.5%;
+    padding: 0 2.5%;
+    border: 4px solid gold;
+}
+
+/* Adjusts the size of the '* - required' text in the form */
+form p {
+    font-size: 1em;
+}
+
+/*Sets text color, background color, size, and positioning of the search form's submit button; also rounds the button edges*/
+#submit-button {
+    color: darkblue;
+    background-color: gold;
+    font-size: 2em;
+    margin-top: 2.5%;
+    border-radius: 10px;
+}
+
+/*Changes the background color for the current page's link in the nav bar to show the user which page they are on*/
+#home {
+    color: darkblue;
+    background-color: cornsilk;
+    padding: 0 0.5%;
+}
+
+/*Centers the website summary section*/
+#summary {
+    background-color: #1c16d2;
+    text-align: center;
+    border: 4px solid gold;
+    margin-bottom: 1%;
+}
+
+/*Increases the text size for paragraphs, list elements, and form labels*/
+p, li, label {
+    font-size: 1.5em;
+}
+
+/* Increases the size and bottom margin of form input elements */
+input {
+    font-size: 1.25em;
+    margin-bottom: 2.5%;
+}
+
+/*Increases the text size and centers h2 elements*/
+h2 {
+    text-align: center;
+    font-size: 2em;
+}
+
+/* Increases the text size of h3 elements */
+h3 {
+    font-size: 1.5em;
+}
+
+/*Changes the color and increases the size of links in the nav bar*/
+nav a {
+    color: white;
+    font-size: 2em;
+}
+
+/* Changes the background and text color of the current element in focus, or of a link being hovered over */
+:focus, a:hover {
+    background-color: gold;
+    color: darkblue;
+}
